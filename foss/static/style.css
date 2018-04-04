@@ -1,0 +1,39 @@
+
+.mynav {
+	background-color: #2df900;
+	align-items: center;
+	align-content: center;
+	height: 70px;
+	padding: 13px 0 0 0;
+	word-spacing: 10px;
+	box-shadow: 0px 5px 5px #aaaaaa;
+}
+
+.center {
+	margin: 0;
+	padding: 0;
+}
+
+.navtxt{
+	align-self: center;
+	vertical-align: center;
+	font-family: 'Comic Sans MS','Courier New','Georgia','Times New Roman','Arial';
+}
+
+.bt1 {
+	float: right;
+}
+
+@media screen and (max-width: 534px) {
+
+ .mynav {
+	height: 100px;
+}
+
+.bt1 {
+	clear: both;
+	float: left;
+	margin-top: 10px;
+}
+
+}

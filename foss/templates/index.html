@@ -1,0 +1,196 @@
+{% load static %}
+{%load mathfilters%}
+<html>
+<head>
+	<title> FOSSEE Summer Fellowship 2018 </title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+	<link rel="stylesheet" href={%static "style.css" %}>
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){$('.dropdown-trigger').dropdown()});
+		function mapMonth(txt)
+		{
+			switch(txt)
+			{
+				case "January": return 1;
+				case "February": return 2;
+				case "March": return 3;
+				case "April": return 4;
+				case "May": return 5;
+				case "June": return 6;
+				case "July": return 7;
+				case "August": return 8;
+				case "September": return 9;
+				case "October": return 10;
+				case "November": return 11;
+				case "December": return 12;
+			}
+		}
+		var b=0;
+		var year=0,month=0;
+		function post()
+		{
+			var form=$("#sub");
+			var lst={'year':year,'month':month};
+			$.each(lst,function(k,v){
+
+				var field=$("<input></input>");
+				field.prop("type","hidden");
+				field.prop("name",k);field.prop("value",v);
+				form.append(field);
+			});
+			if(b==3)
+				form.submit();
+		}
+		function getMonth(obj)
+		{
+			$(monthDropDown).text($(obj).text());
+			b|=2;
+			month=mapMonth($(obj).text());
+			post();
+		}
+		function getYear(obj)
+		{
+			$(yearDropDown).text($(obj).text());
+			b|=1;
+			year=parseInt($(obj).text());
+			post();
+		}
+	</script>
+</head>
+
+
+<body>
+		<div class="mynav">
+    	    <h4 class="navtxt center"><b>FOSSEE Summer Fellowship 2018</b></h4>
+        </div>
+	<div style='margin:0% 2%'>
+		<div class="section">
+			<div>
+				<h5 style='float:left;padding: 0 0 0 0;'>Enter Month & Year</h5>
+				<div class="bt1">
+					<div style='float:right;margin-right: 5px;'><a href="#" id="monthDropDown" class="btn dropdown-trigger" data-target="monthList">Month</a></div>
+
+				    <div style="float:right;margin-right: 5px;"><a href="#" id="yearDropDown" class="btn dropdown-trigger" data-target="yearList">Year</a></div>
+				</div>
+			</div><br><br><br>
+			<ul id="monthList" class='dropdown-content'>
+				<li><a href="#" onclick="getMonth(this)">January</a></li>
+				<li><a href="#" onclick="getMonth(this)">February</a></li>
+				<li><a href="#" onclick="getMonth(this)">March</a></li>
+				<li><a href="#" onclick="getMonth(this)">April</a></li>
+				<li><a href="#" onclick="getMonth(this)">May</a></li>
+				<li><a href="#" onclick="getMonth(this)">June</a></li>
+				<li><a href="#" onclick="getMonth(this)">July</a></li>
+				<li><a href="#" onclick="getMonth(this)">August</a></li>
+				<li><a href="#" onclick="getMonth(this)">September</a></li>
+				<li><a href="#" onclick="getMonth(this)">October</a></li>
+				<li><a href="#" onclick="getMonth(this)">November</a></li>
+				<li><a href="#" onclick="getMonth(this)">December</a></li>
+			</ul>
+			<ul id="yearList" class='dropdown-content'>
+				<li><a href="#" onclick="getYear(this)">2000</a></li>
+				<li><a href="#" onclick="getYear(this)">2001</a></li>
+				<li><a href="#" onclick="getYear(this)">2002</a></li>
+				<li><a href="#" onclick="getYear(this)">2003</a></li>
+				<li><a href="#" onclick="getYear(this)">2004</a></li>
+				<li><a href="#" onclick="getYear(this)">2005</a></li>
+				<li><a href="#" onclick="getYear(this)">2006</a></li>
+				<li><a href="#" onclick="getYear(this)">2007</a></li>
+				<li><a href="#" onclick="getYear(this)">2008</a></li>
+				<li><a href="#" onclick="getYear(this)">2009</a></li>
+				<li><a href="#" onclick="getYear(this)">2010</a></li>
+				<li><a href="#" onclick="getYear(this)">2011</a></li>
+				<li><a href="#" onclick="getYear(this)">2012</a></li>
+				<li><a href="#" onclick="getYear(this)">2013</a></li>
+				<li><a href="#" onclick="getYear(this)">2014</a></li>
+				<li><a href="#" onclick="getYear(this)">2015</a></li>
+				<li><a href="#" onclick="getYear(this)">2016</a></li>
+				<li><a href="#" onclick="getYear(this)">2017</a></li>
+				<li><a href="#" onclick="getYear(this)">2018</a></li>
+				<li><a href="#" onclick="getYear(this)">2019</a></li>
+				<li><a href="#" onclick="getYear(this)">2020</a></li>
+				<li><a href="#" onclick="getYear(this)">2021</a></li>
+				<li><a href="#" onclick="getYear(this)">2022</a></li>
+				<li><a href="#" onclick="getYear(this)">2023</a></li>
+				<li><a href="#" onclick="getYear(this)">2024</a></li>
+				<li><a href="#" onclick="getYear(this)">2025</a></li>
+			</ul>
+		</div>
+		<br><br>
+		<div>
+			<hr>
+			<h5>List Of Tutorials</h5>
+			<hr>
+			{% if dates %}
+			<div class="row">
+				<div class="col s3"><b>Course Name</b></div>
+				<div class="col s3"><b>Expected Submission Date(MM/DD/YYYY)</b></div>
+				<div class="col s3"><b>Actual Submission Date(MM/DD/YYYY)</b></div>
+			</div>
+				{% for obj in dates %}
+				<div class="row">
+					<div class="col s3"><b>{{obj.cname}}</b></div>
+					<div class="col s3"><b>{{obj.act_date|date:"m-d-Y"}}</b></div>
+					<div class="col s3"><b>{{obj.expt_date|date:"m-d-Y"}}</b></div>
+				</div>
+				{% endfor %}
+			{% else %}
+			<h8> No Rows to Display </h8>
+			{% endif %}
+		</div>
+		<br><br>
+		<div class="section">
+			<hr>
+			<h5>Tutorials Count Per Contributor</h5>
+			<hr>
+			{% if usr_table %}
+			<div class="row">
+				<div class="col s6"><b>Publisher</b></div>
+				<div class="col s6"><b>Publish Count</b></div>
+			</div>
+			{% for obj in usr_table %}
+			<div class="row">
+				<div class="col s6"><b>{{ obj.pub }}</b></div>
+				<div class="col s6"><b>{{ obj.count }}</b></div>
+			</div>
+			{% endfor %}
+			{%else%}
+			<h8> Rows to Display </h8>
+			{%endif%}
+		</div>
+		<br><br>
+		<div class="section">
+			<hr>
+			<h5>Total Payment For This Month</h5>
+			<hr>
+			{%if usr_table%}
+			<div class="row">
+				<div class="col s4"><b>Publisher</b></div>
+				<div class="col s4"><b>Publish Count</b></div>
+				<div class="col s4"><b>Total Payment(No of Courses*1000)</b></div>
+			</div>
+			
+			{%for obj in usr_table%}
+			<div class="row">
+				<div class="col s4"><b>{{obj.pub}}</b></div>
+				<div class="col s4"><b>{{obj.count}}</b></div>
+				<div class="col s4"><b>{{ obj.count|mul:1000 }}</b></div>
+			</div>
+			{%endfor%}
+			{%else%}
+			<h8>No Rows to Display</h8>
+			{%endif%}
+		</div>
+	</div>
+	<form id="sub" method='POST' action='/'>{%csrf_token%}</form>
+</body>
+<footer>
+	<div></div>
+</footer>
+</html>
