@@ -1,9 +1,9 @@
 # FOSSEE Summer Fellowship Assignment
 
 ## Topic : Spoken Tutorial Project Web Development Work
-Python Version-: 3.5
+Python Version-: 3.6
 Packages used:
-* Django 2.0.3  ``` pip install django```
+* Django 2.0.4  ``` pip install django```
 * mathfilters   ```pip install mathfilters```
 
 ## Database Required
