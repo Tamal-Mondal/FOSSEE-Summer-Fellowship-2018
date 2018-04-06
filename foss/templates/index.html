@@ -129,12 +129,15 @@
 			<hr>
 			{% if dates %}
 			<div class="row">
+				<div class="col s3"><b>Foss Catagory</b></div>
 				<div class="col s3"><b>Course Name</b></div>
-				<div class="col s3"><b>Expected Submission Date(MM/DD/YYYY)</b></div>
-				<div class="col s3"><b>Actual Submission Date(MM/DD/YYYY)</b></div>
+				<div class="col s3"><b>Expected Submission Date (MM/ DD/ YYYY)</b></div>
+				<div class="col s3"><b>Actual Submission Date (MM/ DD/ YYYY)</b></div>
 			</div>
+			<div class="divider"></div>
 				{% for obj in dates %}
 				<div class="row">
+					<div class="col s3"><b>{{obj.fn}}</b></div>
 					<div class="col s3"><b>{{obj.cname}}</b></div>
 					<div class="col s3"><b>{{obj.act_date|date:"m-d-Y"}}</b></div>
 					<div class="col s3"><b>{{obj.expt_date|date:"m-d-Y"}}</b></div>
@@ -154,6 +157,7 @@
 				<div class="col s6"><b>Publisher</b></div>
 				<div class="col s6"><b>Publish Count</b></div>
 			</div>
+			<div class="divider"></div>
 			{% for obj in usr_table %}
 			<div class="row">
 				<div class="col s6"><b>{{ obj.pub }}</b></div>
@@ -173,9 +177,9 @@
 			<div class="row">
 				<div class="col s4"><b>Publisher</b></div>
 				<div class="col s4"><b>Publish Count</b></div>
-				<div class="col s4"><b>Total Payment(No of Courses*1000)</b></div>
+				<div class="col s4"><b>Total Payment(No of courses*1000)</b></div>
 			</div>
-			
+			<div class="divider"></div>
 			{%for obj in usr_table%}
 			<div class="row">
 				<div class="col s4"><b>{{obj.pub}}</b></div>

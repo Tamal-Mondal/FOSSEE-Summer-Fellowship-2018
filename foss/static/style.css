@@ -14,6 +14,10 @@
 	padding: 0;
 }
 
+.divider {
+	margin-bottom: 10px;
+}
+
 .navtxt{
 	align-self: center;
 	vertical-align: center;
